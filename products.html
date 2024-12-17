@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Products</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Include Sidebar and Header -->
     <div class="sidebar">
         <div class="logo-container">
             <div class="logo">LOGO</div>
         </div>
         <ul class="nav-links">
-            <li class="active"><a href="index.html">Dashboard</a></li>
-            <li><a href="products.html">Products</a></li>
+            <li><a href="index.html">Dashboard</a></li>
+            <li class="active"><a href="products.html">Products</a></li>
             <li><a href="shipments.html">Shipments</a></li>
             <li><a href="recalls.html">Recalls</a></li>
             <li><a href="retailers.html">Retailers</a></li>
@@ -32,12 +36,97 @@
         </div>
     </div>
 
-    <!-- Page-Specific Content -->
     <div class="main-content">
-        <h1>Product List</h1>
-        <p>This is where product content will go.</p>
-    </div>
+        <div class="section-card">
+            <h2>Product List</h2>
+            <div style="padding: 20px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                    <div style="display: flex; gap: 10px;">
+                        <input type="text" placeholder="Search products..." style="padding: 8px 12px; border: 1px solid var(--border-color); border-radius: 4px; width: 250px;">
+                        <button style="padding: 8px 16px; background-color: var(--deep-blue); color: white; border: none; border-radius: 4px; cursor: pointer;">
+                            <i class="fas fa-search"></i> Search
+                        </button>
+                    </div>
+                    <button style="padding: 8px 16px; background-color: var(--deep-blue); color: white; border: none; border-radius: 4px; cursor: pointer;">
+                        <i class="fas fa-plus"></i> Add Product
+                    </button>
+                </div>
 
-    <script src="products.js"></script>
+                <table class="custom-table">
+                    <thead>
+                        <tr>
+                            <th><input type="checkbox"></th>
+                            <th>SKU Code</th>
+                            <th>Product Name</th>
+                            <th>UPC Code</th>
+                            <th>Category</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>COF-001</td>
+                            <td><a href="#" class="name-link">Premium Coffee Beans</a></td>
+                            <td>890678456734</td>
+                            <td>Beverages</td>
+                            <td>
+                                <div style="display: flex; gap: 8px;">
+                                    <button style="padding: 4px 8px; background: none; border: none; cursor: pointer; color: #666;">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button style="padding: 4px 8px; background: none; border: none; cursor: pointer; color: #666;">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>TEA-002</td>
+                            <td><a href="#" class="name-link">Organic Green Tea</a></td>
+                            <td>890678456735</td>
+                            <td>Beverages</td>
+                            <td>
+                                <div style="display: flex; gap: 8px;">
+                                    <button style="padding: 4px 8px; background: none; border: none; cursor: pointer; color: #666;">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button style="padding: 4px 8px; background: none; border: none; cursor: pointer; color: #666;">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>TEA-003</td>
+                            <td><a href="#" class="name-link">Herbal Infusion Pack</a></td>
+                            <td>890678456736</td>
+                            <td>Beverages</td>
+                            <td>
+                                <div style="display: flex; gap: 8px;">
+                                    <button style="padding: 4px 8px; background: none; border: none; cursor: pointer; color: #666;">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button style="padding: 4px 8px; background: none; border: none; cursor: pointer; color: #666;">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 20px;">
+                    <div>Showing 1-3 of 3 products</div>
+                    <div style="display: flex; gap: 8px;">
+                        <button style="padding: 8px 16px; background-color: var(--light-gray); border: 1px solid var(--border-color); border-radius: 4px; cursor: pointer;">Previous</button>
+                        <button style="padding: 8px 16px; background-color: var(--deep-blue); color: white; border: none; border-radius: 4px; cursor: pointer;">Next</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
