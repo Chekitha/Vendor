@@ -1,43 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Products Dashboard</title>
-        <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
-        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
-        <div class="sidebar">
-            <div class="logo-container">
-                <div class="logo">LOGO</div>
-            </div>
-            <ul class="nav-links">
-                <li><a href="index.html">Dashboard</a></li>
-                <li><a href="products.html">Products</a></li>
-                <li><a href="shipments.html">Shipments</a></li>
-                <li><a href="recalls.html">Recalls</a></li>
-                <li><a href="retailers.html">Retailers</a></li>
-                <li><a href="reports.html">Reports</a></li>
-                <li><a href="settings.html">Settings</a></li>
-            </ul>
-        </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recalls Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
     
-        <div class="header">
-            <div class="page-title">
-                <h1>Recalls</h1>
-            </div>
-            <div class="header-icons">
-                <div class="icon-wrapper"><i class="fas fa-bell"></i></div>
-                <div class="icon-wrapper"><i class="fas fa-question-circle"></i></div>
-                <div class="icon-wrapper"><i class="fas fa-user-circle"></i></div>
-            </div>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo-container">
+            <div class="logo">LOGO</div>
         </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Dashboard</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="shipments.html">Shipments</a></li>
+            <li class="active"><a href="recalls.html">Recalls</a></li>
+            <li><a href="retailers.html">Retailers</a></li>
+            <li><a href="reports.html">Reports</a></li>
+            <li><a href="settings.html">Settings</a></li>
+        </ul>
+    </div>
+
+    <div class="header">
+        <div class="page-title">
+            <h1>Recalls</h1>
+        </div>
+        <div class="header-icons">
+            <div class="icon-wrapper"><i class="fas fa-bell"></i></div>
+            <div class="icon-wrapper"><i class="fas fa-question-circle"></i></div>
+            <div class="icon-wrapper"><i class="fas fa-user-circle"></i></div>
+        </div>
+    </div>
 
     <div class="main-content">
-        <p>Manage product recalls and compliance here.</p>
+        <div class="section-card">
+            <h2>Active Recalls</h2>
+            <div style="padding: 20px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                    <div style="display: flex; gap: 10px;">
+                        <input type="text" placeholder="Search recalls..." style="padding: 8px 12px; border: 1px solid var(--border-color); border-radius: 4px; width: 250px;">
+                        <button style="padding: 8px 16px; background-color: var(--deep-blue); color: white; border: none; border-radius: 4px; cursor: pointer;">
+                            <i class="fas fa-search"></i> Search
+                        </button>
+                    </div>
+                    <button style="padding: 8px 16px; background-color: var(--deep-blue); color: white; border: none; border-radius: 4px; cursor: pointer;">
+                        <i class="fas fa-plus"></i> New Recall
+                    </button>
+                </div>
+
+                <table class="custom-table">
+                    <thead>
+                        <tr>
+                            <th>Recall ID</th>
+                            <th>Product Info</th>
+                            <th>Company</th>
+                            <th>Notification Status</th>
+                            <th class = "clickable">Stores Notified</th>
+                            <th>Date Initiated</th>
+                            <th>Priority</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>RC-2024-001</td>
+                            <td>
+                                <div style="display: flex; flex-direction: column;">
+                                    <span class="name-link">Premium Coffee Beans</span>
+                                    <span style="font-size: 12px; color: #666;">SKU: COF-001</span>
+                                </div>
+                            </td>
+                            <td>Global Coffee Corp</td>
+                            <td>
+                                <div style="display: flex; gap: 5px; align-items: center;">
+                                    <span style="background-color: #def7ec; color: #03543f; padding: 4px 8px; border-radius: 4px;">
+                                        Complete
+                                    </span>
+                                </div>
+                            </td>
+                            <td>
+                                <div style="display: flex; flex-direction: column;">
+                                    <span>42/42 Stores</span>
+                                    <span style="font-size: 12px; color: #666;">100% Complete</span>
+                                </div>
+                            </td>
+                            <td>2024-03-15</td>
+                            <td>
+                                <span style="background-color: #fde8e8; color: #9b1c1c; padding: 4px 8px; border-radius: 4px;">
+                                    High
+                                </span>
+                            </td>
+                            <td>
+                                <div style="display: flex; gap: 8px;">
+                                    <button style="padding: 4px 8px; background: none; border: none; cursor: pointer; color: #666;" title="View Details">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button style="padding: 4px 8px; background: none; border: none; cursor: pointer; color: #666;" title="Communication Log">
+                                        <i class="fas fa-comments"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>RC-2024-002</td>
+                            <td>
+                                <div style="display: flex; flex-direction: column;">
+                                    <span class="name-link">Organic Green Tea</span>
+                                    <span style="font-size: 12px; color: #666;">SKU: TEA-002</span>
+                                </div>
+                            </td>
+                            <td>TeaLeaf Industries</td>
+                            <td>
+                                <div style="display: flex; gap: 5px; align-items: center;">
+                                    <span style="background-color: #fef3c7; color: #92400e; padding: 4px 8px; border-radius: 4px;">
+                                        In Progress
+                                    </span>
+                                </div>
+                            </td>
+                            <td>
+                                <div style="display: flex; flex-direction: column;">
+                                    <span>28/35 Stores</span>
+                                    <span style="font-size: 12px; color: #666;">80% Complete</span>
+                                </div>
+                            </td>
+                            <td>2024-03-18</td>
+                            <td>
+                                <span style="background-color: #fef3c7; color: #92400e; padding: 4px 8px; border-radius: 4px;">
+                                    Medium
+                                </span>
+                            </td>
+                            <td>
+                                <div style="display: flex; gap: 8px;">
+                                    <button style="padding: 4px 8px; background: none; border: none; cursor: pointer; color: #666;" title="View Details">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button style="padding: 4px 8px; background: none; border: none; cursor: pointer; color: #666;" title="Communication Log">
+                                        <i class="fas fa-comments"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 20px;">
+                    <div>Showing 1-2 of 2 recalls</div>
+                    <div style="display: flex; gap: 8px;">
+                        <button style="padding: 8px 16px; background-color: var(--light-gray); border: 1px solid var(--border-color); border-radius: 4px; cursor: pointer;">Previous</button>
+                        <button style="padding: 8px 16px; background-color: var(--deep-blue); color: white; border: none; border-radius: 4px; cursor: pointer;">Next</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>
